@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Gather emails and subdomains via OSINT:
+OEmailHarvest gathers emails and subdomains through OSINT sources such as certificate transparency and public passive DNS datasets. It can enrich resolutions, optionally brute-force DNS names, audit MX/SPF/DMARC/DKIM posture, and export multi-format reports for domains under authorised assessment.
 
 ---
 
 ## ✨ Features
 
-- Email & Subdomain OSINT — CT logs, MX/SPF/DMARC audit, pattern guesser & sandbox
+- Multi-source OSINT collection (CT logs and public recon APIs)
+- Subdomain enrichment with optional DNS brute-force wordlists
+- Email security audit covering MX, SPF, DMARC, and DKIM signals
+- WHOIS display and guess/pattern helpers for naming conventions
+- TXT/JSON/CSV/HTML exports and --all for full packs
+- Sandbox and TLS-verify controls for constrained environments
 
 ---
 
@@ -38,7 +43,10 @@ Gather emails and subdomains via OSINT:
 ## 🚀 Usage
 
 ```bash
-./OEmailHarvest
+./OEmailHarvest example.com --audit --json
+./OEmailHarvest example.com --sources A --enrich --txt
+./OEmailHarvest example.com --brute --wordlist dns.txt --all
+./OEmailHarvest --help
 ```
 
 ---
